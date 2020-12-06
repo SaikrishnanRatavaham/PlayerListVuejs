@@ -1,28 +1,36 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
+    <PlayerList />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import PlayerList from './components/PlayerList.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    PlayerList
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+
+
+
+.card {
+       border: initial;
+    background: #fff;
+    border-radius: .1rem;
+    border: 0px solid rgba(0, 0, 0, 0.125);
+    box-shadow: 0 1px 15px rgba(0,0,0,.04), 0 1px 6px rgba(0,0,0,.04);
+}
+.rounded .card {
+    border-radius: .75rem;
+}
+.card .card-body {
+    padding: 1.75rem;
 }
 </style>
