@@ -35,14 +35,14 @@
                            </div>
                            <div class="  d-flex flex-column "  v-if="playerDetails.UpComingMatchesList.list.CCode"  > 
                               <p class="mb-2 font-weight-bold" >Upcoming match</p>
-                              <h5 class="d-inline "> {{(playerDetails.UpComingMatchesList.list.CCode) ? playerDetails.UpComingMatchesList.list.CCode : 'No match'}} VS {{(playerDetails.UpComingMatchesList.list.VsCCode) ? playerDetails.UpComingMatchesList.list.VsCCode : '-'}}</h5>
+                              <h5 class="d-inline "> {{ playerDetails.UpComingMatchesList.list.CCode }} VS {{ playerDetails.UpComingMatchesList.list.VsCCode}}</h5>
                            </div>
-                              <div class="  d-flex flex-column "  v-if="!playerDetails.UpComingMatchesList.list.CCode"  > 
+                              <div class="d-flex flex-column "  v-if="!playerDetails.UpComingMatchesList.list.CCode"> 
                               <p class="mb-2 font-weight-bold" >No upcoming match</p>
                                <h5 class="d-inline "> </h5>
                            </div>
                         </div>
-                        <p class="mb-0 text-muted"  v-if="playerDetails.UpComingMatchesList.list.CCode" > {{(playerDetails.UpComingMatchesList.date) ? playerDetails.UpComingMatchesList.date : '-'}}</p>
+                        <p class="mb-0 text-muted"  v-if="playerDetails.UpComingMatchesList.list.CCode" > {{playerDetails.UpComingMatchesList.date}}</p>
                      </div>
                   </div>
                </div>
@@ -69,7 +69,6 @@ export default {
     computed: {
         resultQuery() {
             if (this.searchQuery) {
-                console.log(this.searchQuery);
                 return this.listPlayerData.filter(item => {
                     return this.searchQuery
                         .toLowerCase()
